@@ -6,14 +6,6 @@ import Session from './Session';
 import Timer from './Timer';
 
 
-const formatForLeadingZero = (number) => {
-  if(number < 10) {
-    return "0"+number.toString();
-  }
-  return number;
-}
-
-
 
 const App = () => {
 
@@ -102,7 +94,7 @@ const App = () => {
         clearInterval(sessionSeconds);
         clearInterval(breakSeconds);
     });
-  });
+  }, [timerState, sessionTime, breakTime, beepAudio, sessionLength, breakLength]);
 
 
 
