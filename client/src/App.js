@@ -99,16 +99,36 @@ const App = () => {
 
 
   return (
-    <div>
-      <Break breakLength={breakLength} onDecrement={breakDecrement} onIncrement={breakIncrement}/>
-      <br />
-      <Session sessionLength={sessionLength} onDecrement={sessionDecrement} onIncrement={sessionIncrement}/>
-      <br />
-      {(sessionTime >= 0) ? 
-        <Timer title={"Session"} timerMinute={Math.floor(sessionTime/60)} timerSecond={sessionTime%60} onReset={reset} onStartStop={startStop}/>
-        :
-        <Timer title={"Break"} timerMinute={Math.floor(breakTime/60)} timerSecond={breakTime%60} onReset={reset} onStartStop={startStop}/>
-      }
+    <div className="container">
+      <h3 className="text-center mb-5 mt-5" style={{fontFamily: "Abril Fatface"}}>Pomodoro Clock</h3>
+
+      <div className="pomodoro">
+        <div className="row">
+          <div className="col"></div>
+
+          <div className="col">
+            {(sessionTime >= 0) ? 
+              <Timer title={"Session Timer"} timerMinute={Math.floor(sessionTime/60)} timerSecond={sessionTime%60} onReset={reset} onStartStop={startStop} timerState={timerState}/>
+              :
+              <Timer title={"Break Timer"} timerMinute={Math.floor(breakTime/60)} timerSecond={breakTime%60} onReset={reset} onStartStop={startStop} timerState={timerState}/>
+            }
+          </div>
+
+          <div className="col"></div>
+        </div>
+
+        <div className="row">
+          <div className="col">
+            <Break breakLength={breakLength} onDecrement={breakDecrement} onIncrement={breakIncrement}/>
+          </div>
+
+          <div className="col"></div>
+
+          <div className="col">
+            <Session sessionLength={sessionLength} onDecrement={sessionDecrement} onIncrement={sessionIncrement}/>
+          </div>
+        </div>
+      </div>
       
     </div>
   );
