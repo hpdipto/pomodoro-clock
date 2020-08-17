@@ -21,7 +21,7 @@ function Break({breakLength, onDecrement, onIncrement}) {
         </div>
       </div>
 
-      <div className="card-footer"><h6>Break Length</h6></div>
+      <div className="card-footer"><h6 style={{fontFamily: "Roboto Slab"}}>Break Length</h6></div>
     </div>
   );
 }

@@ -22,7 +22,7 @@ function Session({sessionLength, onDecrement, onIncrement}) {
         </div>
       </div>
 
-      <div className="card-footer"><h6>Session Length</h6></div>
+      <div className="card-footer"><h6 style={{fontFamily: "Roboto Slab"}}>Session Length</h6></div>
     </div>
   );
 }

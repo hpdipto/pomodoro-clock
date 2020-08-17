@@ -38,7 +38,7 @@ function Timer({title, timerMinute, timerSecond, onReset, onStartStop, timerStat
         <audio id="beep"preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"/>
       </div>
 
-      <div className="card-footer"><h6>{title}</h6></div>
+      <div className="card-footer"><h6 style={{fontFamily: "Roboto Slab"}}>{title}</h6></div>
     </div>
   );
 }
